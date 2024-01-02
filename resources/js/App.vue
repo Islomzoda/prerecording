@@ -5,7 +5,11 @@
          <div class="logo-container">
              <img src="../../public/logo.png" alt="Логотип">
          </div>
-
+         <div class="text-center">
+             <div class="fs-4">
+                 Предзаписи курси Wildberries - барои Тоҷокон
+             </div>
+         </div>
          <!-- Форма с градиентом -->
          <div class="gradient-form mt-3">
              <div class="form-floating mt-3">
