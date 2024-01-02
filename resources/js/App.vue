@@ -10,12 +10,11 @@
          <div class="gradient-form mt-3">
              <div class="form-floating mt-3">
                  <input v-model="fio" class="form-control form-control-lg" type="text" placeholder="Ном ва Насаб" id="fio">
-                 <label for="fio">Ном ва Насаб</label>
+                 <label for="fio">Ному насаб</label>
              </div>
              <div class="form-floating mt-3">
                  <input v-model="phone" class="form-control form-control-lg" type="text" placeholder="Номер телефона" id="phone">
-                 <label for="phone">Рақамӣ телефон (пример +79777777777)</label>
-                 <span v-if="!isValidPhone" class="error-message">Рақами телефон бояд бо  '+' сар шавад</span>
+                 <label for="phone">Рақамӣ телефон</label>
              </div>
              <div class="form-floating mt-3">
                  <input v-model="maosh" class="form-control form-control-lg" type="number" placeholder="Даромади мохонаи шумо" id="maosh">
@@ -23,7 +22,7 @@
              </div>
              <div class="form-floating mt-3">
                  <input v-model="working_in" class="form-control form-control-lg" type="text" placeholder="Ҷойи кори ҳозира" id="working_in">
-                 <label for="working_in">Машғулияти шумо(бизнес, студент, )</label>
+                 <label for="working_in">Машғулияти шумо(бизнес, студент, коргар)</label>
              </div>
          </div>
          <!-- Кнопка с вау-эффектом -->
@@ -47,11 +46,8 @@ export default {
         };
     },
     computed: {
-        isValidPhone() {
-            return this.phone.startsWith('+');
-        },
         isValidForm() {
-            return this.isValidPhone && this.fio && this.maosh && this.working_in;
+            return  this.fio && this.maosh && this.working_in;
         }
     },
     methods: {
