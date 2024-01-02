@@ -33,7 +33,7 @@ async def start(message: types.Message):
         # Формируем ответ
         if user_data:
             user_name = user_data.get('fio', 'Unknown')
-            response_text = f'Ассалому алейкум, {user_name} шумо мувафакона дар предзапис номнавис шудед.'
+            response_text = f'Ассалому алейкум, {user_name}! шумо дар предзапись номнавис шудед.'
         else:
             response_text = 'Пользователь не найден.'
     else:
@@ -44,7 +44,7 @@ async def start(message: types.Message):
 @dp.message_handler()
 async def schedule(message: types.Message):
     # Отправляем ответ на команду /schedule
-    schedule_text = 'Дар айни замон предзапис идома дорад. Ҳангоми старти наборӣ шогирдон мо ба шумо хабар медихем. Бо эҳтиром, Alaboom.'
+    schedule_text = 'Рузҳои наздик менеджери мо бо шумо ба алоқа мебарояд'
     await message.reply(schedule_text, parse_mode=ParseMode.MARKDOWN)
 
 if __name__ == '__main__':

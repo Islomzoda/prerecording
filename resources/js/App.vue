@@ -22,7 +22,7 @@
              </div>
              <div class="form-floating mt-3">
                  <input v-model="working_in" class="form-control form-control-lg" type="text" placeholder="Ҷойи кори ҳозира" id="working_in">
-                 <label for="working_in">Машғулияти шумо(бизнес, студент, коргар)</label>
+                 <label for="working_in">Машғулияти шумо (бизнес, студент, коргар)</label>
              </div>
          </div>
          <!-- Кнопка с вау-эффектом -->
