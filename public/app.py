@@ -9,6 +9,7 @@ API_TOKEN = ''
 # Замените 'YOUR_API_URL' на URL вашего API
 API_URL = 'https://prerecording.alaboom.org/api/get/record'
 
+
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
@@ -26,19 +27,25 @@ def get_user_from_api(user_id, telegram_id):
 async def start(message: types.Message):
     # Получаем значение старт из команды
     start_value = message.get_args()
-
+    if start_value:
     # Получаем данные пользователя из API по ID
-    user_data = get_user_from_api(start_value, message.from_user.id)
-
-    # Формируем ответ
-    if user_data:
-        user_name = user_data.get('fio', 'Unknown')
-        response_text = f'Ассалому алейкум, {user_name} шумо мувафакона дар предзапис номнавис шудед.'
+        user_data = get_user_from_api(start_value, message.from_user.id)
+        # Формируем ответ
+        if user_data:
+            user_name = user_data.get('fio', 'Unknown')
+            response_text = f'Ассалому алейкум, {user_name} шумо мувафакона дар предзапис номнавис шудед.'
+        else:
+            response_text = 'Пользователь не найден.'
     else:
-        response_text = 'Пользователь не найден.'
-
+        response_text = 'Шумо то ҳол анкетаро пур накардаед https://prerecording.alaboom.org'
     # Отправляем ответ пользователю
     await message.reply(response_text, parse_mode=ParseMode.MARKDOWN)
+
+@dp.message_handler(commands=['schedule'])
+async def schedule(message: types.Message):
+    # Отправляем ответ на команду /schedule
+    schedule_text = 'На данный момент идет предзапись. Мы вам сообщим, когда начнется набор. С уважением, Alaboom.'
+    await message.reply(schedule_text, parse_mode=ParseMode.MARKDOWN)
 
 if __name__ == '__main__':
     from aiogram import executor
