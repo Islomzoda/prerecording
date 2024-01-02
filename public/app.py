@@ -41,10 +41,10 @@ async def start(message: types.Message):
     # Отправляем ответ пользователю
     await message.reply(response_text, parse_mode=ParseMode.MARKDOWN)
 
-@dp.message_handler(commands=['schedule'])
+@dp.message_handler()
 async def schedule(message: types.Message):
     # Отправляем ответ на команду /schedule
-    schedule_text = 'На данный момент идет предзапись. Мы вам сообщим, когда начнется набор. С уважением, Alaboom.'
+    schedule_text = 'Дар айни замон предзапис идома дорад. Ҳангоми старти наборӣ шогирдон мо ба шумо хабар медихем. Бо эҳтиром, Alaboom.'
     await message.reply(schedule_text, parse_mode=ParseMode.MARKDOWN)
 
 if __name__ == '__main__':
