@@ -7,7 +7,7 @@
          </div>
          <div class="text-center">
              <div class="fs-4">
-                 Предзаписи курси Wildberries - барои Тоҷокон
+                 Предзаписи курси Wildberries - барои Тоҷикон
              </div>
          </div>
          <!-- Форма с градиентом -->
@@ -18,7 +18,7 @@
              </div>
              <div class="form-floating mt-3">
                  <input v-model="phone" class="form-control form-control-lg" type="text" placeholder="Номер телефона" id="phone">
-                 <label for="phone">Рақамӣ телефон</label>
+                 <label for="phone">Рақами телефон</label>
              </div>
              <div class="form-floating mt-3">
                  <input v-model="maosh" class="form-control form-control-lg" type="number" placeholder="Даромади мохонаи шумо" id="maosh">
